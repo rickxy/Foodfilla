@@ -1,0 +1,21 @@
+<header>
+        <a href="#"><img class="logo" src="/static/img/logo.jpg" alt="logo"></a>
+        <div class="bx bx menu" id="menu-icon"></div>
+
+        <ul class="navbar">
+            <li><a href="/">Home</a></li>          
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/load-data/addtopmeal">Add Meal</a></li>
+            <li><a href="/load-data/addmenu">Add Menu</a></li>
+
+        {{#if user}}
+            <li>Hello {{user.firstName}} {{user.lastName}}!</li>
+            <li><a href="/logout">Logout</a></li>
+        {{else}}
+            <li><a href="/login">Log In</a></li>
+            <li><a href="/signup">Sign Up</a></li>
+        {{/if}}
+
+
+        </ul>
+</header>

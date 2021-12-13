@@ -1,0 +1,27 @@
+<div class="login">
+    <h1>Welcome Back</h1>
+
+    {{#each errors}}
+    <p style="color: red">{{this}}</p>
+    {{/each}}
+    <form method="post" action="/login">
+        <input type="text" name="email" placeholder="Email Address" value="{{val.email}}">
+
+        {{#if valid.email}}
+        <span style="color: red;">{{valid.email}}</span><br />
+        {{/if}}
+        <input type="password" name="password" placeholder="Password">
+        {{#if valid.password}}
+        <span style="color: red;">{{valid.password}}</span><br />
+        {{/if}}<br>
+        <input type="checkbox" name="customer" {{#if value.customer}} checked="true" {{/if}}>
+        <label for="customer">customer</label><br>
+        <input type="checkbox" name="clerk" {{#if value.clerk}} checked="true" {{/if}}>
+        <label for="clerk">clerk</label><br>
+        {{#if valid.checkbox}}
+        <span>{{valid.checkbox}}</span>
+        {{/if}}
+
+        <input type="submit" value="Log In">
+    </form>
+</div>

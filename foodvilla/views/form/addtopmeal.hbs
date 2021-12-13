@@ -1,0 +1,47 @@
+<div class ="signup">
+        <h1>Add Top Meal</h1>
+        
+<form method="post" action="/signup">
+    <label for="firstName"> Meal Name</label>
+    <input type="text" id="firstName" name="firstName" value="{{values.firstName}}"/><br/>
+    {{#if validation.firstName}}
+    <span style="color: red;">{{validation.firstName}}</span><br/>
+    {{/if}}
+
+    <label for="firstName"> Description </label>
+    <input type="text" id="firstName" name="firstName" value="{{values.firstName}}"/><br/>
+    {{#if validation.firstName}}
+    <span style="color: red;">{{validation.firstName}}</span><br/>
+    {{/if}}
+
+    <label for="lastName">Price </label>
+    <input type="text" id="lastName" name="lastName" value="{{values.lastName}}"/><br/>
+    {{#if validation.lastName}}
+    <span style="color: red;">{{validation.lastName}}</span><br/>
+    {{/if}}
+
+    <label for="email"> Time </label>
+
+
+    <input type="text" id="email" name="email" value="{{values.email}}"/><br/>
+ {{#if validation.email}}
+    <span style="color: red;">{{validation.email}}</span><br/>
+    {{/if}}
+
+    <label for="password"> Image</label>
+    <input type="password" id="password" name="password"/><br/>
+    {{#if validation.password}}
+    <span style="color: red;">{{validation.password}}</span><br/>
+    {{/if}}
+
+  
+    
+
+    <input type="submit" value="singup"/>
+</form>
+
+
+
+
+</div>   
+
