@@ -8,13 +8,25 @@ const path = require("path");
 const userModel = require("../models/user");
 const sgMail = require("@sendgrid/mail");
 
+const  MealKits = require('../models/node');
+
 
 
 // Set up a route to our homepage (default route).
-router.get("/", (req, res) => {
-    res.render("form/index", {
-        allKits: modelKits.getTopMeals()
-    });
+// router.get("/", (req, res) => {
+//     res.render("form/index", {
+//         allKits: modelKits.getTopMeals()
+//     });
+// });
+
+router.get('/',(req,res)=>{
+    MealKits.find().lean().limit(8)
+	.then((result)=>{
+     res.render('form/index',{ mealKits: result});
+	})
+	.catch((err)=>{
+		console.log(err);
+})
 });
 
 router.get('/test', function(req, res, next) {
@@ -287,9 +299,7 @@ router.post("/login", (req, res) => {
  // viewing the Meal Descriptions
 
  router.get("/details/:Title", (req, res) => {
-    res.render("form/details", {
-        allKits: modelKits.getTopMeals()
-    });
+    res.render("form/details", );
 });
 
 

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const mealsSchema = new Schema({
+const  mealKitsSchema = new Schema({
 	Title: {
 		type: String,
 		required: true
@@ -29,13 +29,12 @@ const mealsSchema = new Schema({
 
 },{ timestamps: true});
 
-const Meals = mongoose.model('meals',mealsSchema);
-module.exports = Meals;
+const  MealKits = mongoose.model(' mealKits',  mealKitsSchema);
+module.exports =  MealKits;
 
 
 
 // var mongoose = require('mongoose');
-
 
 // var  topmealSchema = new mongoose.Schema({
 //   Title:  String,
@@ -66,6 +65,7 @@ module.exports = Meals;
        
 //     }
 // }
+
 const myKits = [
     {
         mealCategory : "Specials of FOODVILLA",
