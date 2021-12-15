@@ -5,12 +5,13 @@
         <ul class="navbar">
             <li><a href="/">Home</a></li>          
             <li><a href="/menu">Menu</a></li>
+        
+
+        {{#if user}}
             <li><a href="/load-data/meal-kits">Clerk</a></li>
             <li><a href="/load-data/addtopmeal">Add Meal</a></li>
             <li><a href="/load-data/addmenu">Add Menu</a></li>
-
-        {{#if user}}
-            <li>Hello {{user.firstName}} {{user.lastName}}!</li>
+            <li>Hello ,{{user.firstName}} !</li>
             <li><a href="/logout">Logout</a></li>
         {{else}}
             <li><a href="/login">Log In</a></li>

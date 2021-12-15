@@ -1,33 +1,38 @@
-<div class="table-data">
- <div class="heading">
 
-            <h2> Meals List</h2>
+<!-- include header -->
+   {{>_header}}
+<!-- /include header -->
+
+    <!-- Main Site -->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <a href="/load-data/addtopmeal" class="border-shadow">
+                    <span class="text-gradient">Add Meal <i class="fas fa-user"></i></span>
+                </a>
+            </div>
+
+            <!-- form handling -->
+            <form action="/" method="POST">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                           <th>Title</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>TopMeal</th>
+                            <th>Time</th>
+                            <th>Image</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       {{>_show}}
+                    </tbody>
+                </table>
+            </form>
         </div>
-    <table border="1">
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>TopMeal</th>
-            <th>Time</th>
-            <th>Image</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-        
-       {{#each mealKits}}
-        <tr>
-            <td> {{Title}} </td>
-            <td> {{Description}} </td>
-            <td> {{Price}} </td>
-            <td> {{TopMeal}} </td>
-            <td> {{Time}} </td>
-            <td> {{Image}} </td>
-            <td><a href="#">Edit</a></td>
-            <td><a href="#">Delete</a></td>
-        </tr>
-      {{/each}}
-        
-    </table>
-    </div>
+    </main>
+<!-- /Main Site -->
 

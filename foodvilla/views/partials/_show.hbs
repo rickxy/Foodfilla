@@ -1,0 +1,12 @@
+  {{#each mealKits}}
+        <tr>
+            <td> {{Title}} </td>
+            <td> {{Description}} </td>
+            <td> {{Price}} </td>
+            <td> {{TopMeal}} </td>
+            <td> {{Time}} </td>
+            <td> {{Image}} </td>
+            <td><a href="/load-data/update-meal/{{_id}}">Edit</a></td>
+            <td><a href="/load-data/delete/{{_id}}">Delete</a></td>
+        </tr>
+      {{/each}}

@@ -1,11 +1,9 @@
 <section class="menu">
-    {{#each allKits}}
-    <div class="heading">
-      <h2>{{mealCategory}}</h2>
-    </div>   
+      
     <div class="onMenu-container">
         {{#each mealKits}}
-            <div class="box">
+        <a href="details/:Title"> 
+             <div class="box">
                 <div class="box-img">
                     <img src={{Image}} alt="{{Title}}">
                     <h2>{{Title}}</h2>
@@ -14,7 +12,8 @@
                     <span class="btn">{{Price}}</span>
                 </div>
             </div>
+        </a>    
         {{/each}}
     </div>
-       {{/each}}
+      
 </section>

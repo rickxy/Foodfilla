@@ -1,4 +1,4 @@
-<div class ="signup">
+{{!-- <div class ="signup">
         <h1>Add Top Meal</h1>
         
 <form method="post" action="/signup">
@@ -43,5 +43,30 @@
 
 
 
-</div>   
+</div>    --}}
+
+<!-- include header -->
+{{>_header}}
+<!-- /include header -->
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/load-data/meal-kits"><i class="fas fa-angle-double-left"></i> All Meals</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Add Top Meal</h2>
+            <span class="text-light">Use the below form to add another new meal</span>
+        </div>
+
+        <!-- add user form -->
+        {{>_form}}
+       
+    </div>
+</main>
+<!-- /Main Site -->
+
 

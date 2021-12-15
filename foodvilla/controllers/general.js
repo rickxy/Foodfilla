@@ -29,6 +29,8 @@ router.get('/',(req,res)=>{
 })
 });
 
+
+
 router.get('/test', function(req, res, next) {
       
     userData.find((err, docs) => {
@@ -45,12 +47,21 @@ router.get('/test', function(req, res, next) {
 
 
 
-router.get("/menu", (req, res) => {
-    res.render("form/menu", {
-        allKits: modelKits.getAllKits()
-    });
-});
+// router.get("/menu", (req, res) => {
+//     res.render("form/menu", {
+//         allKits: modelKits.getAllKits()
+//     });
+// });
 
+router.get('/menu',(req,res)=>{
+    MealKits.find().lean()
+	.then((result)=>{
+     res.render('form/menu',{ mealKits: result});
+	})
+	.catch((err)=>{
+		console.log(err);
+})
+});
 router.get("/signup", function (req, res) {
     if (!res.locals.user)
         res.render("form/register");
@@ -298,10 +309,44 @@ router.post("/login", (req, res) => {
 
  // viewing the Meal Descriptions
 
- router.get("/details/:Title", (req, res) => {
-    res.render("form/details", );
-});
 
+// router.get('/details/:Title"',(req,res)=>{
+//     MealKits.find().lean()
+// 	.then((result)=>{
+//      res.render('form/details',{ mealKits: result});
+// 	})
+// 	.catch((err)=>{
+// 		console.log(err);
+// })
+
+
+// });
+
+// router.get("/details/:_id", async (req, res) => {
+//     try {
+//       const { _id } = req.params;
+//       const MealKits = await MealKits.findById(_id).lean();
+    
+//       res.render("form/details", { MealKits });
+//     } 
+//     catch (e) {
+//       console.log(e);
+//       res.status(404).render("error/error", { status: "404" });
+//     }
+//   });
+
+router.get('/details/:Title', async (req, res) => {
+    const MealKit = await MealKits.findOne({ Title: req.params.Title }).lean()
+    if (MealKit == null) res.redirect('/')
+    res.render('form/details', { MealKit: MealKit })
+  })
+
+router.get('/cart/:_id',(req,res)=>{
+    if (res.locals.user)
+        res.render('form/success'); 
+    else 
+        res.render('form/err');
+});
 
 module.exports = router;
 
